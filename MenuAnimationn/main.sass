@@ -1,0 +1,104 @@
+*, *::before, *::after
+    box-sizing: border-box
+
+body, h1, h2, h3, h4, h5, h6, p
+    margin: 0
+
+header
+    background: lightgray
+    .container
+        margin: 0 1em
+        .mobile-menu
+            display: flex
+            flex-direction: column
+            .mobile-menu__button.is-active
+                transform: rotate(45deg)
+                transition: transform 400ms ease-in 1200ms
+            .mobile-menu__button
+                display: flex
+                flex-direction: column
+                height: 100px
+                width: 100px
+                align-self: flex-end
+                align-items: center
+                justify-content: center
+                transform: none
+                transition: transform 100ms ease-out 0ms
+                .bar
+                    display: block
+                    width: 50px
+                    height: 5px
+                    background: #9eb3bb
+                    margin: 3px
+                    border-radius: 15%
+                    top: 0
+                    transform: none
+                    position: relative
+                .bar:nth-child(1)
+                    transition: top 250ms ease-out 300ms
+                .bar.is-active:nth-child(1)
+                    position: relative
+                    top: 9px
+                    transition: top 250ms ease-in 300ms
+                .bar:nth-child(2)
+                    transition: transform 250ms ease-out 600ms
+                .bar.is-active:nth-child(2)
+                    transform: scaleX(0%)
+                    transition: transform 250ms ease-in 100ms
+                .bar:nth-child(3)
+                    transition-property: transform, position, top
+                    transition-duration: 250ms
+                    transition-timing-function: ease-out
+                    transition-delay: 300ms
+                .bar.is-active:nth-child(3)
+                    transform: rotate(90deg)
+                    position: relative
+                    top: -12px
+                    transition-property: transform, position, top
+                    transition-duration: 250ms
+                    transition-timing-function: ease-in
+                    transition-delay: 600ms
+            .mobile-menu__menu
+                //
+                .menu.is-hidden
+                    transform: translateX(-110%)
+                .menu
+                    margin: 0
+                    list-style: none
+                    position: absolute
+                    transition: all .3s ease-in-out
+                    .menu__item
+                        margin: 1.5em 0
+                        .menu__link
+                            text-decoration: none
+                            color: black
+                            font-family: "Georgia", "sans-serif"
+                            font-size: 3rem
+                            &::after
+                                content: ""
+                                width: 0px
+                                height: 3px
+                                display: block
+                                background: #9eb3bb
+                                transition: 300ms
+                                margin-top: .2em
+                            &:hover::after 
+                                width: 100%
+body
+    background-image: url('../images/background.jpg')
+    background-size: 100%
+    background-repeat: no-repeat
+    height: 700px
+    .home-banner
+        //
+        h1
+            text-align: center
+            font-family: "Georgia", "sans-serif"
+            font-size: 1em
+            margin-top: 3em
+            color: #9eb3bb
+
+        
+        
+    
+        
