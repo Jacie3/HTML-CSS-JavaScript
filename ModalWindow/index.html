@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <title>Document</title>
+</head>
+<header>
+    <h3>thismovie.com</h3>
+</header>
+<body>
+    <div class="container">
+        <div class="movie-container">
+            <h1 class="movie__title">Mountains Beyond Mountains</h1>
+            <p class="movie__excerpt">
+                Mountains Beyond Mountains: The Quest of Dr. Paul Farmer, A Man Who Would Cure the World is a non-fiction, biographical work by American writer Tracy Kidder. The moviwe traces the life of physician and anthropologist Paul Farmer with particular focus on his work fighting tuberculosis in Haiti, Peru and Russia.
+            </p>
+        </div>
+        <div class="images-container">
+            <img class="image__left" src="../images/mountain-image.jpg" alt="cloudy mountain view of haiti">
+            <img class="image__center" src="../images/coast-image.jpg" alt="sunny beach, mountain view of haiti">
+            <img class="image__right" src="../images/mountain-image2.jpg" alt="cloudy mountain view and farmland view of haiti">
+        </div>
+        <div class="price-container">
+            <h2 class="movie-length">100 <span>min</span></h2>
+            <div class="price-payment-container">
+                <div class="price-payment-inner-container">
+                    <h2 class="movie-price">$11.00 <span>usd</span></h2>
+                    <button type="button" class="watch-button">Watch Movie</button>
+                </div>
+            </div>
+        </div>
+        <div class="modal-payment">
+            <div class="modal-container">
+                <div class="modal__info">
+                    <h2 class="modal__title">Payment Method</h2>
+                    <div class="modal__credit-cards">
+                        <img class="card visa is-active" src="../images/visa-credit-card.png" alt="visa credit card">
+                        <img class="card mastercard" src="../images/mastercard-credit-card.png" alt="mastercard credit card">
+                        <img class="card discover" src="../images/discover-credit-card.png" alt="discover credit card">
+                    </div>
+                    <form action="">
+                        <label for="card-number"></label>
+                        <input type="text" id="card-number" class="is-active" placeholder="1234 6578 9101 1213">
+                        <div class="month-year-container">
+                            <label for="month"></label>
+                            <input type="text" id="month" class="not-active" placeholder="MM">
+                            <label for="year"></label>
+                            <input type="text" id="year" class="not-active" placeholder="YYYY">
+                        </div>
+                        <label for="card-holder"></label>
+                        <input type="text" id="card-holder" class="not-active" placeholder="Card holder">
+                    </form>
+                    <div class="button-container">
+                        <button type="button" class="payment-cancel-button cancel">Cancel</button>
+                        <button type="button" class="payment-cancel-button payment">Payment</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../js/main.js"></script>
+</html>

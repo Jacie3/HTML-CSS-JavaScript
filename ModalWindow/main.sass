@@ -1,0 +1,224 @@
+*, *::before, *::after
+    box-sizing: border-box
+
+body, h1, h2, h3, h4, h5, h6, p
+    margin: 0
+
+header
+    display: flex
+    justify-content: center
+    padding: 1em
+    h3
+        font-family: Didot
+        color: #fff
+        text-transform: uppercase
+        font-size: 1rem
+body
+    background-image: linear-gradient(to bottom, #6d1927, #ff00), url("../images/background-image.jpg")
+    background-position: center
+    background-repeat: no-repeat
+    .container
+        position: relative
+        display: grid
+        grid-template-rows: .3fr 1fr .3fr
+        grid-template-columns: .33fr .66fr
+        column-gap: 5em
+        margin: 0 4em
+        .movie-container
+            display: grid
+            grid-row: 2 / 3
+            grid-column: 1 / 2
+            .movie__title
+                font-family: Didot
+                color: #fff
+                text-transform: uppercase
+                font-size: 4rem
+                line-height: 1.2
+                font-weight: 1000
+            .movie__excerpt
+                font-family: Roboto
+                color: #fff
+                font-size: 1.3rem
+        .images-container
+            display: grid
+            grid-row: 2 / 3
+            grid-column: 2 / 4
+            grid-template-rows: 1fr
+            grid-template-columns: 1fr 1fr 1fr
+            .image__left
+                display: grid
+                align-self: center
+                grid-row: 1 / 3
+                max-width: 100%
+            .image__center
+                display: grid
+                justify-self: center
+                align-self: center
+                grid-row: 1 / 3
+                max-width: 130%
+                position: relative
+            .image__right
+                display: grid
+                align-self: center
+                grid-row: 1 / 3
+                max-width: 100%
+        .price-container
+            display: grid
+            grid-row: 3 / 4
+            grid-column: 1 / 4
+            justify-content: space-between
+            align-content: end
+            margin-top: 8em
+            .movie-length
+                display: inline
+                grid-row: 1 / 2
+                align-self: center
+                font-family: Didot
+                color: #fff
+                font-weight: 400
+                font-size: 2.5rem
+                white-space: nowrap
+                span
+                    font-size: 1.3rem
+                    font-family: Roboto
+            .price-payment-container
+                display: grid
+                grid-row: 1 / 2
+                font-family: Roboto
+                color: #fff
+                font-size: 1.3rem
+                .price-payment-inner-container
+                    display: flex
+                    align-items: center
+                    .movie-price
+                        font-family: Didot
+                        color: #fff
+                        font-weight: 400
+                        font-size: 2.5rem
+                        span
+                            font-size: 1.3rem
+                            font-family: Roboto
+                .watch-button
+                    width: auto
+                    background: none
+                    margin-left: 3em
+                    padding: .5em 1em
+                    color: #fff
+                    font-family: Roboto
+                    text-transform: uppercase
+                    font-size: 1.1rem
+    .modal-payment
+        position: absolute
+        width: 350px
+        height: 500px
+        left: 50%
+        top: 50%
+        margin-left: -175px
+        margin-top: -250px 
+        .modal-container--active
+            animation: foldOut 1000ms cubic-bezier(0.165, 0.84, 0.44, 1) forwards
+        .modal-container--hide
+            animation: foldIn 500ms cubic-bezier(0.165, 0.84, 0.44, 1) both
+            animation-delay: 900ms
+        .modal-container
+            display: block
+            position: relative
+            display: table
+            padding: 2.5em
+            background: #fff
+            border-radius: 5px    
+            transform: scaleY(1%) scaleX(0)
+            .modal__info--active
+                animation: fadeIn ease 2500ms
+            .modal__info--hide
+                animation: fadeOut ease 1000ms forwards
+            .modal__info
+                opacity: 1
+                .modal__title
+                    text-align: center
+                    font-family: Didot, sans-serif
+                    font-size: 2.1rem
+                .modal__credit-cards
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    margin: .5em 0
+                    .card
+                        width: 30%
+                        margin: 1em 0
+                        padding-bottom: .5em
+                    .is-active
+                        border-bottom: 3px solid #26ccff 
+                    .mastercard
+                        margin: 1em
+                form
+                    display: inline-grid
+                    width: 100%
+                    label
+                        //
+                    input
+                        font-family: Roboto, sans-serif
+                        font-size: 1.2rem
+                        margin: .5em 0
+                        border: none
+                        padding-bottom: .5em
+                        color: #858585
+                    .month-year-container
+                        display: flex
+                        #month
+                            width: 50%
+                            margin-right: 1em
+                        #year
+                            width: 50%
+                    .is-active
+                        border-bottom: 3px solid #26ccff
+                    .not-active
+                        border-bottom: 3px solid #858585
+                .button-container
+                    display: flex
+                    justify-content: space-between
+                    margin-top: 1em
+                    .payment-cancel-button
+                        background: none 
+                        font-family: Roboto, sans-serif
+                        font-size: 1.2rem
+                        padding: .5em 1em
+                        border-radius: 5px
+                    .cancel
+                        border: 3px solid #858585
+                        color: #858585
+                    .payment
+                        border: 3px solid #26ccff
+                        color: #26ccff
+        @keyframes foldOut
+            0% 
+                transform: scaleY(0.005) scaleX(0)
+            
+            50% 
+                transform: scaleY(0.005) scaleX(1)
+            
+            100% 
+                transform: scaleY(1) scaleX(1)
+        @keyframes foldIn
+            0% 
+                transform: scaleY(1) scaleX(1)
+            
+            50% 
+                transform: scaleY(0.005) scaleX(1)
+            
+            100% 
+                transform: scaleY(0) scaleX(0)
+        @keyframes fadeIn
+                    0%
+                        opacity: 0
+                    50%
+                        opacity: 0
+                    100%
+                        opacity: 1
+        @keyframes fadeOut
+                    0%
+                        opacity: 1
+                    50%
+                        opacity: 1
+                    100%
+                        opacity: 0
